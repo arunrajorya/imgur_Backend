@@ -31,10 +31,11 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  // res.json({ message: "Welcome to Imgur Backend Api." });
+  res.sendFile(__dirname + "/public/index.html");
 });
 
-require("./app/routes/tutorial.routes")(app);
+require("./app/routes/post.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
